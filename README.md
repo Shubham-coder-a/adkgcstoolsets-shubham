@@ -1,10 +1,48 @@
-# adkgcstoolsets
-This repo teaches before_tool_call + GCS tool scoping, not a full production agent.
-====================
-Key structure choices for clarity:
-====================
-- Opens with a one-line "what problem does this solve" statement
-- Quick-reference table pointing to the exact file for each concept
-- Explains why before_tool_call matters before showing code
-- Explicitly explains the None vs. dict return semantics, since that's the trickiest part for newcomers
-- "Extending This Pattern" section signals what's intentionally left out (caching, per-user scoping, after_tool_call) so readers know it's a focused example, not a gap
+# Google ADK Agent with Google Cloud Storage (GCS)
+
+An AI-powered document assistant built using Google Agent Development Kit (ADK) and Google Cloud Storage. It retrieves information from PDF documents and answers questions with source-file citations.
+
+## 🚀 Project Overview
+
+This project demonstrates how an ADK agent can access documents in a Google Cloud Storage bucket and provide document-grounded answers.
+
+## ✨ Key Features
+
+- Gemini 2.5 Flash-powered AI agent
+- Google Cloud Storage integration
+- PDF document search and retrieval
+- `before_tool_callback` for bucket-target control
+- Answers grounded in document content
+- Source-file citation in responses
+- Testing through the ADK Web interface
+
+## 🏗️ Architecture
+
+User Query → ADK Agent → Security Callback → GCS Toolset → GCS Bucket → PDF Content → Grounded Answer with Source Citation
+
+## 🛠️ Technologies Used
+
+- Python
+- Google Agent Development Kit (ADK)
+- Gemini 2.5 Flash
+- Google Cloud Storage (GCS)
+- Google Cloud Shell
+- Git and GitHub
+
+## 📸 Project Demonstration
+
+The project was tested using a company travel policy PDF. The agent summarized the policy, listed available bucket files, and identified the source filename.
+
+## 🔐 Security
+
+A `before_tool_callback` is used to control the target bucket. Google Cloud IAM permissions should also be configured appropriately.
+
+## 🙏 Acknowledgements
+
+Special thanks to **Ankush Kathar** and **Ashutosh S. Bhakare** for their guidance and for sharing the project architecture.
+
+## 👨‍💻 Author
+
+**Shubham Nagpure**
+
+GitHub: [Shubham-coder-a](https://github.com/Shubham-coder-a)
